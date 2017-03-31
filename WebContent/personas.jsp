@@ -16,5 +16,8 @@
 		<s:submit></s:submit>
 		<s:actionerror/>
 </s:form>
+<p>
+	<a href="<s:url action='index'/>">Volver</a>
+</p>
 </body>
 </html>
