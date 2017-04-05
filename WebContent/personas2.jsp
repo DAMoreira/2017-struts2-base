@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<s:form action="execute">
+<h1>Lista de Personas</h1>
 		<table>
 			<tr>
 				<th>ID</th>
@@ -28,6 +28,5 @@
 <p>
 	<a href="<s:url action='index'/>">Volver</a>
 </p>
-</s:form>
 </body>
 </html>

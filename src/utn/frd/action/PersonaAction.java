@@ -26,13 +26,12 @@ public class PersonaAction extends ActionSupport{
 
 		Persona loquito = new Persona(personas.size(), name, edad, gender);
 		PersistentManager.getInstance().add(loquito);
-		
 		return SUCCESS;
 	}
 	public String execute(){
 		personas = PersistentManager.getInstance();
 //		for(int i = 1; i <= personas.size();i=i+1) {
-			Persona p = personas.get(1);
+			Persona p = personas.get(0);
 //		}
 		return SUCCESS;
 	}

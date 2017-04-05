@@ -16,12 +16,10 @@
 	<p>
 		<!-- este es un link al action "hello" que está definido en el struts.xml -->
 		<a href="<s:url action='save'/>">Ejecutar el action (utn.frd.action.PersonaAction -> metodo save)</a>
-		Esta regla está definida en el archivo struts.xml
 	</p>
-		<p>
+	<p>
 		<!-- este es un link al action "hello" que está definido en el struts.xml -->
-		<a href="<s:url action='execute'/>">Ejecutar el action (utn.frd.action.PersonaAction -> metodo execute</a>
-		Esta regla está definida en el archivo struts.xml
+		<a href="<s:url action='execute'/>">Ejecutar el action (utn.frd.action.PersonaAction -> metodo execute)</a>
 	</p>
 </body>
 </html>
