@@ -13,6 +13,7 @@ public class PersonaAction extends ActionSupport{
 	private String age;
 	private String gender;
 	private List<Persona> personas;
+	private String id;
 	public String save(){
 		List<Persona> personas = PersistentManager.getInstance();
 		int edad = 0;
@@ -31,8 +32,29 @@ public class PersonaAction extends ActionSupport{
 	public String execute(){
 		personas = PersistentManager.getInstance();
 //		for(int i = 1; i <= personas.size();i=i+1) {
-			Persona p = personas.get(0);
+			Persona p = PersistentManager.getInstance().get(0);
 //		}
+		return SUCCESS;
+	}
+	public String eliminar(){
+		personas = PersistentManager.getInstance();
+		int ide=0;
+		int ide2=0;
+		try{
+			ide = Integer.parseInt(id);
+		}catch(Exception e){
+			addActionError("Ocurrió un error con el ID");
+			return ERROR;
+		}
+		for(int i = 0; i < personas.size();i++) {
+			Persona p = PersistentManager.getInstance().get(i);
+			if (p.getId() == ide) {
+				PersistentManager.getInstance().remove(i);	
+			}
+			
+		}
+//		ide2 = PersistentManager.getInstance().indexOf(ide);
+//		PersistentManager.getInstance().remove(ide2);
 		return SUCCESS;
 	}
 	public String getName() {
@@ -58,5 +80,11 @@ public class PersonaAction extends ActionSupport{
 	}
 	public void setPersonas(List<Persona> personas) {
 		this.personas = personas;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 }
