@@ -25,21 +25,23 @@ public class PersonaAction extends ActionSupport{
 			return ERROR;
 		}
 
-		Persona loquito = new Persona(personas.size(), name, edad, gender);
+		Persona loquito = new Persona(personas.size(), name, edad, gender, true);
 		PersistentManager.getInstance().add(loquito);
 		return SUCCESS;
 	}
 	public String execute(){
 		personas = PersistentManager.getInstance();
-//		for(int i = 1; i <= personas.size();i=i+1) {
-			Persona p = PersistentManager.getInstance().get(0);
-//		}
+		for(int i = 0; i < personas.size();i++) {
+			Persona per = personas.get(i);
+			if (per.getAlta() == true) {
+				Persona p = PersistentManager.getInstance().get(i);	
+			}	
+		}
 		return SUCCESS;
 	}
 	public String eliminar(){
 		personas = PersistentManager.getInstance();
 		int ide=0;
-		int ide2=0;
 		try{
 			ide = Integer.parseInt(id);
 		}catch(Exception e){
@@ -50,11 +52,11 @@ public class PersonaAction extends ActionSupport{
 			Persona p = PersistentManager.getInstance().get(i);
 			if (p.getId() == ide) {
 				PersistentManager.getInstance().remove(i);	
+				p.setAlta(false);
+				PersistentManager.getInstance().add(i,p);	
 			}
 			
 		}
-//		ide2 = PersistentManager.getInstance().indexOf(ide);
-//		PersistentManager.getInstance().remove(ide2);
 		return SUCCESS;
 	}
 	public String getName() {
