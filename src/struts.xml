@@ -27,6 +27,10 @@
         <result name="error">/personas3.jsp</result>
          <result name="success">/personas3.jsp</result>
     </action>
+            <action name="modificar" class="utn.frd.action.PersonaAction" method="modificar">
+	        <result name="error">/personas4.jsp</result>
+			<result name="success">/personas4.jsp</result>
+    </action>
 
     </package>
  

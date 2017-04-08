@@ -5,12 +5,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Dar de baja</title>
+<title>Modificar datos de Persona</title>
 </head>
 <body>
-<h1>Eliminar Persona</h1>
-<s:form action="eliminar">
-		<s:textfield label="ID a eliminar" name="id"></s:textfield>
+<h1>Modificar Datos</h1>
+<s:form action="modificar">
+		<s:textfield label="ID*" name="id"></s:textfield>
+		<s:textfield label="Nombre" name="name"></s:textfield>
+		<s:textfield label="Edad" name="age"></s:textfield>
+		<s:radio label="Genero" name="gender" list="#{'Femenino':'Femenino','Masculino':'Masculino'}" />
+		<s:radio label="Alta" name="alta" list="#{'t':'Alta','f':'Baja'}" />
 		<s:submit></s:submit>
 		<s:actionerror/>
 </s:form>

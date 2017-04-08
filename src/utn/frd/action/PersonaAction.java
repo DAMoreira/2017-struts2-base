@@ -1,6 +1,7 @@
 package utn.frd.action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import java.io.*;
 import unt.frd.db.PersistentManager;
 import utn.frd.bean.MessageStore;
 import utn.frd.bean.Persona;
@@ -14,8 +15,9 @@ public class PersonaAction extends ActionSupport{
 	private String gender;
 	private List<Persona> personas;
 	private String id;
+	private String alta;
 	public String save(){
-		List<Persona> personas = PersistentManager.getInstance();
+		personas = PersistentManager.getInstance();
 		int edad = 0;
 
 		try{
@@ -54,12 +56,49 @@ public class PersonaAction extends ActionSupport{
 		for(int i = 0; i < personas.size();i++) {
 			Persona p = PersistentManager.getInstance().get(i);
 			if (p.getId() == ide) {
-				PersistentManager.getInstance().remove(i);	
+//				PersistentManager.getInstance().remove(i);	
 				p.setAlta(false);
-				PersistentManager.getInstance().add(i,p);	
+//				PersistentManager.getInstance().add(i,p);	
 			}
 			
 		}
+		return SUCCESS;
+	}
+	public String modificar(){
+		int ide=0;
+		int edad=0;
+		boolean alta2;
+		personas = PersistentManager.getInstance();
+		try{
+			ide = Integer.parseInt(id);
+		}catch(Exception e){
+			addActionError("Ocurrió un error con el ID");
+			return ERROR;
+		}
+		try{
+			edad = Integer.parseInt(age);
+		}catch(Exception e){
+			addActionError("Ocurrió un error con la edad");
+			return ERROR;
+		}
+		for(int i = 0; i < personas.size();i++) {
+			Persona p = PersistentManager.getInstance().get(i);
+			if (p.getId() == ide) {
+				p.setName(name);
+				p.setAge(edad);
+				p.setGender(gender);
+				char[] a = alta.toCharArray();
+				if (a[0]=='t') {
+					alta2 = true;
+					p.setAlta(alta2);
+				}
+				else {
+					alta2 = false;
+					p.setAlta(alta2);
+				}
+//				p.setAlta(alta2);
+			}
+		} 
 		return SUCCESS;
 	}
 	public String getName() {
@@ -91,5 +130,11 @@ public class PersonaAction extends ActionSupport{
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public String getAlta() {
+		return alta;
+	}
+	public void setAlta(String alta) {
+		this.alta = alta;
 	}
 }

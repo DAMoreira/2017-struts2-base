@@ -45,6 +45,4 @@ public class Persona {
 	public void setAlta(Boolean alta) {
 		this.alta = alta;
 	}
-	
-
 }

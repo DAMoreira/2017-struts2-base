@@ -23,7 +23,7 @@
 	</p>
 	<p>
 		<!-- este es un link al action "hello" que está definido en el struts.xml -->
-		<a href="<s:url action='execute'/>">Modificaciones</a>
+		<a href="<s:url action='modificar'/>">Modificaciones</a>
 	</p>
 	<p>
 		<!-- este es un link al action "hello" que está definido en el struts.xml -->
