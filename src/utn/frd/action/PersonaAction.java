@@ -30,13 +30,16 @@ public class PersonaAction extends ActionSupport{
 		return SUCCESS;
 	}
 	public String execute(){
-		personas = PersistentManager.getInstance();
-		for(int i = 0; i < personas.size();i++) {
-			Persona per = personas.get(i);
+		List<Persona> personas1 = PersistentManager.getInstance();
+		ArrayList<Persona> personas2 = new ArrayList<Persona>();
+		for(int i = 0; i < personas1.size();i++) {
+			Persona per = personas1.get(i);
 			if (per.getAlta() == true) {
-				Persona p = PersistentManager.getInstance().get(i);	
+				personas2.add(per);
 			}	
 		}
+		personas = personas2;
+//		Persona p = personas.get(0);
 		return SUCCESS;
 	}
 	public String eliminar(){

@@ -15,6 +15,7 @@
 				<th>NOMBRE</th>
 				<th>EDAD</th>
 				<th>GENERO</th>
+				<th>ALTA</th>
 			</tr>
 		<s:iterator value="personas" var="p">
 			<tr>
@@ -22,6 +23,7 @@
 				<td><s:property value="#p.name"/></td>
 				<td><s:property value="#p.age"/></td>
 				<td><s:property value="#p.gender"/></td>
+				<td><s:property value="#p.alta"/></td>
 			</tr>
 			</s:iterator>
 		</table>
