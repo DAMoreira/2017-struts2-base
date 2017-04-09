@@ -41,7 +41,6 @@ public class PersonaAction extends ActionSupport{
 			}	
 		}
 		personas = personas2;
-//		Persona p = personas.get(0);
 		return SUCCESS;
 	}
 	public String eliminar(){
@@ -55,10 +54,8 @@ public class PersonaAction extends ActionSupport{
 		}
 		for(int i = 0; i < personas.size();i++) {
 			Persona p = PersistentManager.getInstance().get(i);
-			if (p.getId() == ide) {
-//				PersistentManager.getInstance().remove(i);	
-				p.setAlta(false);
-//				PersistentManager.getInstance().add(i,p);	
+			if (p.getId() == ide) {	
+				p.setAlta(false);	
 			}
 			
 		}
@@ -67,7 +64,6 @@ public class PersonaAction extends ActionSupport{
 	public String modificar(){
 		int ide=0;
 		int edad=0;
-//		boolean alta2;
 		personas = PersistentManager.getInstance();
 		try{
 			ide = Integer.parseInt(id);
@@ -93,16 +89,13 @@ public class PersonaAction extends ActionSupport{
 				if (gender!=null) {
 					p.setGender(gender);
 				}
-//				char[] a = alta.toCharArray();
 				if (alta != null) {
-				if (alta.equals("t")) {
-//					alta2 = true;
-					p.setAlta(true);
-				}
-				if (alta.equals("f")) {
-//					alta2 = false;
-					p.setAlta(false);
-				}			
+					if (alta.equals("t")) {
+						p.setAlta(true);
+					}
+					if (alta.equals("f")) {
+						p.setAlta(false);
+					}			
 				}
 			}
 		} 
