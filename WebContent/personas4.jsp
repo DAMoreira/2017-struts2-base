@@ -10,8 +10,8 @@
 <body>
 <h1>Modificar Datos</h1>
 <s:form action="modificar">
-		<s:textfield label="ID*" name="id"></s:textfield>
-		<s:textfield label="Nombre" name="name"></s:textfield>
+		<s:textfield label="ID*" name="id"></s:textfield> 
+		<s:textfield label="Nombre" name="name" ></s:textfield>
 		<s:textfield label="Edad" name="age"></s:textfield>
 		<s:radio label="Genero" name="gender" list="#{'Femenino':'Femenino','Masculino':'Masculino'}" />
 		<s:radio label="Alta" name="alta" list="#{'t':'Alta','f':'Baja'}" />
@@ -19,7 +19,10 @@
 		<s:actionerror/>
 </s:form>
 <p>
-	<a href="<s:url action='index'/>">Volver</a>
+	<a href="<s:url action='execute'/>">Ver lista</a>
+</p>
+<p>
+	<a href="<s:url action='index'/>">Menu principal</a>
 </p>
 </body>
 </html>

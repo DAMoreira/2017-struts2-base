@@ -67,7 +67,7 @@ public class PersonaAction extends ActionSupport{
 	public String modificar(){
 		int ide=0;
 		int edad=0;
-		boolean alta2;
+//		boolean alta2;
 		personas = PersistentManager.getInstance();
 		try{
 			ide = Integer.parseInt(id);
@@ -75,28 +75,35 @@ public class PersonaAction extends ActionSupport{
 			addActionError("Ocurrió un error con el ID");
 			return ERROR;
 		}
-		try{
-			edad = Integer.parseInt(age);
-		}catch(Exception e){
-			addActionError("Ocurrió un error con la edad");
-			return ERROR;
-		}
 		for(int i = 0; i < personas.size();i++) {
 			Persona p = PersistentManager.getInstance().get(i);
 			if (p.getId() == ide) {
-				p.setName(name);
-				p.setAge(edad);
-				p.setGender(gender);
-				char[] a = alta.toCharArray();
-				if (a[0]=='t') {
-					alta2 = true;
-					p.setAlta(alta2);
+				if (!(name.equals(""))) {
+					p.setName(name);
 				}
-				else {
-					alta2 = false;
-					p.setAlta(alta2);
+				try{
+					edad = Integer.parseInt(age);
+				}catch(Exception e){
+//					addActionError("Ocurrió un error con la edad");
+//					return ERROR;
 				}
-//				p.setAlta(alta2);
+				if (edad!=0) {
+					p.setAge(edad);
+				}
+				if (gender!=null) {
+					p.setGender(gender);
+				}
+//				char[] a = alta.toCharArray();
+				if (alta != null) {
+				if (alta.equals("t")) {
+//					alta2 = true;
+					p.setAlta(true);
+				}
+				if (alta.equals("f")) {
+//					alta2 = false;
+					p.setAlta(false);
+				}			
+				}
 			}
 		} 
 		return SUCCESS;

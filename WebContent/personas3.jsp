@@ -15,7 +15,10 @@
 		<s:actionerror/>
 </s:form>
 <p>
-	<a href="<s:url action='index'/>">Volver</a>
+	<a href="<s:url action='execute'/>">Ver lista</a>
+</p>
+<p>
+	<a href="<s:url action='index'/>">Menu principal</a>
 </p>
 </body>
 </html>
