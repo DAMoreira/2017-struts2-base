@@ -14,7 +14,7 @@
 		<s:textfield label="Nombre" name="name" ></s:textfield>
 		<s:textfield label="Edad" name="age"></s:textfield>
 		<s:radio label="Genero" name="gender" list="#{'Femenino':'Femenino','Masculino':'Masculino'}" />
-  		<s:radio label="Alta" name="alta" list="#{'t':'Alta','f':'Baja'}" />
+<!--  		<s:radio label="Alta" name="alta" list="#{'t':'Alta','f':'Baja'}" /> -->
 		<s:submit></s:submit>
 		<s:actionerror/>
 </s:form>

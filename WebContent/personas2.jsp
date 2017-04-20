@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>Lista de Personas</h1>
-		<table>
+		<table border="1">
 			<tr>
 				<th>ID</th>
 				<th>NOMBRE</th>
